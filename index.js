@@ -37,6 +37,7 @@ Using the burger object below do the following:
   2. The discount method should accept a string that could be "teacher", "student", or "public"
   3. Depending on the string, it will return the correct discounted price
   4. Log the correct returned price to the console
+  
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
