@@ -12,9 +12,11 @@ The function should:
   1. Receive values for the object that will be created
   2. Create and return an object using the received values  
 */
-
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name,price,category){
+  return {
+    name: name,
+    price: price,
+    category: category
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -25,6 +27,11 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log(createMenuItem("Cafe Latte", "4", "Drinks"));
+console.log(createMenuItem("Breakfast Burrito", "16", "Breakfast"));
+console.log(createMenuItem("Americano", "5", "Drinks"));
+console.log(createMenuItem("Eggs", "3", "Breakfast"));
+console.log(createMenuItem("BLT", "10", "Lunch"));
 
 
 
@@ -37,17 +44,27 @@ Using the burger object below do the following:
   2. The discount method should accept a string that could be "teacher", "student", or "public"
   3. Depending on the string, it will return the correct discounted price
   4. Log the correct returned price to the console
-  
+
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-export const burger = {
+ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount:function(people){
+    if(people === "teacher" || people === "students"){
+    return this.price * .75;
+    }else(people === "public")
+    return this.price * .90; 
+  } 
 }
+
+console.log(burger.discount("teacher"));
+console.log(burger.discount("students"));
+console.log(burger.discount("public"));
+
 
 
 
@@ -67,6 +84,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console
 */
+console.log(reviews[5].feedback);
 
 
 
@@ -76,6 +94,15 @@ Using the reviews array above do the following:
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
+
+
+function add(name, rating, feedback){
+  name.push({name, rating, feedback});
+    return name;
+}
+console.log(add(reviews,"Ryan",10,"I loved It!"));
+
+
 
 
 
